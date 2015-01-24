@@ -44,31 +44,29 @@ public class Order {
 
     public double startOrder(){
         processing = true;
-
         return startTime = currentTimeMillis();
     }
-
     public double getStartTime() {
         return startTime;
     }
-
-    public boolean isImmediately() {
-        return immediately;
-    }
-
-    public boolean isProcessing() {
-        return processing;
-    }
-
-    public void completed() {
-        System.out.println("The job placed by _"+customerId+"_ has been Completed");
-
-        Main.orders.remove(this);
-    }
-
     public double getDuration() {
         return duration;
     }
+    public boolean isImmediately() {
+        return immediately;
+    }
+    public boolean isProcessing() {
+        return processing;
+    }
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void hasBeenCompleted() {
+        System.out.println("The job placed by _"+customerId+"_ has been Completed");
+        Main.orders.remove(this);
+    }
+
 
     public UUID getOrderId() {
         return orderId;

@@ -5,43 +5,47 @@ import com.marcelANDevertjan.main.Main;
 import static java.lang.System.currentTimeMillis;
 
 /**
- * This Class was created by marcel on 23-1-2015
- * Time of creation : 22:45
+ * This Class was created by marcel on 24-1-2015
+ * Time of creation : 10:59
  */
 public class Worker implements Runnable{
 
-    boolean working = false;
-    boolean jobsAvailable = true;
+    private boolean running = true;
+    private boolean working = false;
 
-    Order job;
+    Order currentJob;
 
     @Override
     public void run() {
-        while (jobsAvailable) {
+        // As long as process is running.
+        while(running){
 
+            if(working) {
 
-            if(!working) {
-                for (int i = 0; i < Main.orders.size(); i++) {
-                    if(!Main.orders.get(i).isProcessing()){
+                if(currentJob.getStartTime() + currentJob.getDuration()  < currentTimeMillis()) {
+                    currentJob.hasBeenCompleted();
 
-                        job = Main.orders.get(i);
-                        job.startOrder();
+                    working = false;
+                }
 
+            } else {
+                // Check all the jobs from 0 until you find one which is not already in process, and is not finished
+                for (Order order : Main.orders) {
+                    if (!order.isProcessing() && !order.isCompleted()) {
+                        currentJob = order;
+
+                        currentJob.startOrder();
                         working = true;
+
                         break;
                     }
                 }
-            } else if (working){
-
-                if (job.getDuration() < (currentTimeMillis() - job.getStartTime())){
-                    job.completed();
-                    Main.orders.remove(job);
-                    working = false;
-                }
             }
 
-            if(Main.orders.size() == 0){
-                jobsAvailable = false;
+            for (Order order : Main.orders) {
+                if(order.isCompleted()) {
+                    Main.orders.remove(order);
+                }
             }
 
             try {
