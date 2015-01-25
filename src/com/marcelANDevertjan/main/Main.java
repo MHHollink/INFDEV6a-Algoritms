@@ -3,6 +3,7 @@ package com.marcelANDevertjan.main;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Worker;
+import com.marcelANDevertjan.main.Assignment.Scenario2.InsertionSort;
 import com.marcelANDevertjan.main.Assignment.Scenario2.LinearSearch;
 import com.marcelANDevertjan.main.Assignment.Scenario2.MergeSort;
 
@@ -29,12 +30,6 @@ public class Main{
         customers.add(new Customer("EvertJan", "Heilema", 20, 'M', "Papendrecht", "0855012@hr.nl"));
         customers.add(new Customer("Marcel", "Hollink", 21, 'M', "Spijkenisse", "0872955@hr.nl"));
 
-        customers.add(new Customer("Ben", "Hollink", 58, 'M', "Rotterdam"));
-        customers.add(new Customer("Esmee", "van", "Kuijk", 18, 'V', "Spijkenisse"));
-        customers.add(new Customer("Petra", "Manschot", 21, 'V', "Spijkenisse"));
-        customers.add(new Customer("Sander", "Mijer", 35, 'M', "Oud Beijerland" ));
-        customers.add(new Customer("Vincent", "Wodtke", 20, 'M', "Spijkenisse"));
-        
         /**
 
         Random r = new Random();
@@ -61,6 +56,19 @@ public class Main{
 
          */
 
+        /**
+         *
+         *
+
         System.out.println(LinearSearch.searchForLastname("Heilema"));
+
+         */
+
+        InsertionSort.insert(new Customer("Vincent", "Wodtke", 20, 'M', "Spijkenisse"));
+        InsertionSort.insert(new Customer("Esmee", "van", "Kuijk", 18, 'V', "Spijkenisse"));
+        InsertionSort.insert(new Customer("Ben", "Hollink", 58, 'M', "Rotterdam"));
+        InsertionSort.insert(new Customer("Petra", "Manschot", 21, 'V', "Spijkenisse"));
+        InsertionSort.insert(new Customer("Sander", "Mijer", 35, 'M', "Oud Beijerland" ));
+
     }
 }
