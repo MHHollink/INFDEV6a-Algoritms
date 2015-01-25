@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * This Class was created by marcel on 25-1-2015
+ * This Class was created by Marcel and Evert-Jan on 25-1-2015
  * Time of creation : 14:24
  */
 public class MergeSort {

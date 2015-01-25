@@ -3,6 +3,7 @@ package com.marcelANDevertjan.main;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Worker;
+import com.marcelANDevertjan.main.Assignment.Scenario2.LinearSearch;
 import com.marcelANDevertjan.main.Assignment.Scenario2.MergeSort;
 
 import java.util.ArrayList;
@@ -37,8 +38,6 @@ public class Main{
 
 
         /**
-         *
-         *
 
         Random r = new Random();
 
@@ -51,12 +50,19 @@ public class Main{
         Worker worker = new Worker();
         worker.run();
 
-         *
-         *
          */
 
-        MergeSort ms = new MergeSort();
 
+        /**
+         *
+         * SCENARIO TWO
+         *
+
+        MergeSort ms = new MergeSort();
         ms.sortArray(customers);
+
+         */
+
+        System.out.println(LinearSearch.searchForLastname("Heilema"));
     }
 }
