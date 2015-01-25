@@ -1,4 +1,4 @@
-package com.marcelANDevertjan.main.Assignment;
+package com.marcelANDevertjan.main.Assignment.Scenario1;
 
 import com.marcelANDevertjan.main.Main;
 

@@ -1,8 +1,8 @@
 package com.marcelANDevertjan.main;
 
-import com.marcelANDevertjan.main.Assignment.Customer;
-import com.marcelANDevertjan.main.Assignment.Order;
-import com.marcelANDevertjan.main.Assignment.Worker;
+import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
+import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
+import com.marcelANDevertjan.main.Assignment.Scenario1.Worker;
 
 import java.util.ArrayList;
 import java.util.Random;

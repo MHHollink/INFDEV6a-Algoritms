@@ -1,6 +1,4 @@
-package com.marcelANDevertjan.main.Assignment;
-
-import java.util.ArrayList;
+package com.marcelANDevertjan.main.Assignment.Scenario1;
 
 /**
  * This Class was created by Evert-Jan and Marcel on 23-1-2015
