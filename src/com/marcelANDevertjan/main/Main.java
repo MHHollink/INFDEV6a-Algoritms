@@ -2,13 +2,10 @@ package com.marcelANDevertjan.main;
 
 import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
-import com.marcelANDevertjan.main.Assignment.Scenario1.Worker;
+import com.marcelANDevertjan.main.Assignment.Scenario2.BinairyTreeSearch;
 import com.marcelANDevertjan.main.Assignment.Scenario2.InsertionSort;
-import com.marcelANDevertjan.main.Assignment.Scenario2.LinearSearch;
-import com.marcelANDevertjan.main.Assignment.Scenario2.MergeSort;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * This Class was created by marcel And Evert-Jan on 23-1-2015
@@ -56,7 +53,7 @@ public class Main{
 
          */
 
-        /**
+         /**
          *
          *
 
@@ -69,6 +66,9 @@ public class Main{
         InsertionSort.insert(new Customer("Ben", "Hollink", 58, 'M', "Rotterdam"));
         InsertionSort.insert(new Customer("Petra", "Manschot", 21, 'V', "Spijkenisse"));
         InsertionSort.insert(new Customer("Sander", "Mijer", 35, 'M', "Oud Beijerland" ));
+
+
+        System.out.println(BinairyTreeSearch.binarySearchLastName(customers, "Heilema"));
 
     }
 }
