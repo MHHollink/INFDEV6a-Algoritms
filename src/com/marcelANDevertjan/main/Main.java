@@ -5,8 +5,7 @@ import com.marcelANDevertjan.main.Assignment.Order;
 import com.marcelANDevertjan.main.Assignment.Worker;
 
 import java.util.ArrayList;
-
-import static java.lang.System.currentTimeMillis;
+import java.util.Random;
 
 /**
  * This Class was created by marcel on 23-1-2015
@@ -18,14 +17,15 @@ public class Main{
     public static ArrayList<Customer> customers = new ArrayList<Customer>();
 
     public static void main(String[] args) {
+
         customers.add(new Customer("Marcel", "Hollink", 21, 'M', "Spijkenisse", "0872955@hr.nl"));
         customers.add(new Customer("EvertJan", "Heilema", 20, 'M', "Papendrecht", "0855012@hr.nl"));
+        customers.add(new Customer("Esmee", "van", "Kuijk", 18, 'V', "Spijkenisse"));
 
-        for (Customer customer : customers) {
-            if (customer.getLastName().equals("Hollink")) {
-                customer.placeOrder(5000);
-                break;
-            }
+        Random r = new Random();
+
+        for (int i = 0; i < r.nextInt(30); i++) {
+            customers.get(r.nextInt(3)).placeOrder(r.nextInt(4500)+500, r.nextBoolean());
         }
 
         System.out.println(orders.size());
