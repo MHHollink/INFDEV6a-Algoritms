@@ -3,7 +3,7 @@ package com.marcelANDevertjan.main.Assignment.Scenario2;
 import com.marcelANDevertjan.main.Main;
 
 /**
- * This Class was created by marcel on 25-1-2015
+ * This Class was created by Marcel And Evert-Jan on 25-1-2015
  * Time of creation : 15:02
  */
 public class LinearSearch {
