@@ -1,5 +1,6 @@
 package com.marcelANDevertjan.main.Assignment.Scenario2;
 
+import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Main;
 
 /**
@@ -10,12 +11,12 @@ public class LinearSearch {
 
     public static String searchForLastname(String lastname) {
 
-        for (int fucks = 0; fucks < Main.customers.size(); fucks++) {
-            if (Main.customers.get(fucks).getLastName().equals(lastname)) {
-                if (Main.customers.get(fucks).getPrefix() != null) {
-                    return Main.customers.get(fucks).getFirstName() + " " + Main.customers.get(fucks).getPrefix() + " " + Main.customers.get(fucks).getLastName();
+        for (Customer customer : Main.customers) {
+            if (customer.getLastName().equals(lastname)) {
+                if (customer.getPrefix() != null) {
+                    return customer.getFirstName() + " " + customer.getPrefix() + " " + customer.getLastName();
                 } else {
-                    return Main.customers.get(fucks).getFirstName() + " " + Main.customers.get(fucks).getLastName();
+                    return customer.getFirstName() + " " + customer.getLastName();
                 }
             }
         }
