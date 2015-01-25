@@ -3,6 +3,7 @@ package com.marcelANDevertjan.main;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Worker;
+import com.marcelANDevertjan.main.Assignment.Scenario2.BinairyTreeSearch;
 import com.marcelANDevertjan.main.Assignment.Scenario2.LinearSearch;
 import com.marcelANDevertjan.main.Assignment.Scenario2.MergeSort;
 
@@ -61,6 +62,7 @@ public class Main{
 
          */
 
-        System.out.println(LinearSearch.searchForLastname("Heilema"));
+        //System.out.println(LinearSearch.searchForLastname("Heilema"));
+        System.out.println(BinairyTreeSearch.binarySearchLastName(customers, "Heilema"));
     }
 }
