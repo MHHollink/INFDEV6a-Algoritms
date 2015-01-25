@@ -15,8 +15,6 @@ public class Customer {
     private String residence;
     private String eMail;
 
-    private ArrayList<Order> orders = new ArrayList<Order>();
-
     /**
      * This is the method to create a new customer, it is called by the New Customer(...) function.
      *
@@ -88,13 +86,9 @@ public class Customer {
      *
      * @param orderDuration is the duration of te order in milliseconds.
      */
-    public void placeOrder(double orderDuration){
-        new Order(id, orderDuration);
-    }
     public void placeOrder(double orderDuration, boolean i){
         new Order(id, orderDuration, i);
     }
-
 
 
     /**
@@ -130,10 +124,6 @@ public class Customer {
 
     public String getResidence() {
         return residence;
-    }
-
-    public ArrayList<Order> getOrders(){
-        return orders;
     }
 
 }

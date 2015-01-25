@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * This Class was created by marcel on 23-1-2015
+ * This Class was created by marcel And Evert-Jan on 23-1-2015
  * Time of creation : 21:45
  */
 public class Main{
@@ -25,7 +25,7 @@ public class Main{
         Random r = new Random();
 
         for (int i = 0; i < r.nextInt(30); i++) {
-            customers.get(r.nextInt(3)).placeOrder(r.nextInt(4500)+500, r.nextBoolean());
+            customers.get(r.nextInt(customers.size())).placeOrder(r.nextInt(4500)+500, r.nextBoolean());
         }
 
         System.out.println(orders.size());
