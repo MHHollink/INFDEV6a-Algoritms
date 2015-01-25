@@ -26,10 +26,11 @@ public class InsertionSort {
             // check each Letter
             for (int j = 0; j < letters.length; j++) {
                 // if it is bigger then that of the customer
-                if (letters[j] <= temp[j]) {
+                if (letters[j] < temp[j]) {
 
                     // start moving customers over...
                     for (int k = Main.customers.size() - 1; k >= i; k--) {
+
 
                         if( k == Main.customers.size()-1){
                             Main.customers.add(Main.customers.get(k));
@@ -55,7 +56,7 @@ public class InsertionSort {
 
         }
         if(!inserted){
-            System.out.println("There was to insert between, '"+c.getLastName()+"' was added at the end of the list. \n");
+            System.out.println("There was nothing to insert between, '"+c.getLastName()+"' was added at the end of the list. \n");
             Main.customers.add(c);
         }
 
