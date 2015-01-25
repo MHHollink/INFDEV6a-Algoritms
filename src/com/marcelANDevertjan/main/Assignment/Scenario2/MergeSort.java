@@ -45,7 +45,7 @@ public class MergeSort {
 
     private static int[] merge(int[] array, int left, int right, int mid)
     {
-        // Helper
+        // Helper variables
         int[] helper = new int[array.length / 2 + 1];
         int helperSize = 0;
         int helperIndex = 0;
@@ -54,9 +54,9 @@ public class MergeSort {
 
         // Keeps comparing both parts of the array unless it hit one of the boundaries
         while(firstLeftInt <= mid && firstRightInt <= right){
-            // no data in the helper - normal compare
+            // if there is no data from the helper (0-0=0), use left and right to compare
             if((helperSize - helperIndex) == 0){
-                //right is less than left - we overwrite left with right and store left in the helper
+                //when right is less than left we overwrite left with right and store left in the helper
                 if(array[firstLeftInt] > array[firstRightInt]){
                     helper[helperSize] = array[firstLeftInt];
                     array[firstLeftInt] = array[firstRightInt];
@@ -64,17 +64,19 @@ public class MergeSort {
                     firstRightInt++;
                 }
             }
-            //some data in the helper - we use helper (instead of left) for comparison with right
+            // if there is some data in the helper,
+            // we use the helpers (instead of left) for comparison with right
             else{
-                //right is less than helper
+                // when right is less than the helper
                 if(helper[helperIndex] > array[firstRightInt]){
-                    //we overwrite next left value, but must save it in the helper first
+                    // we save left in the helper and we overwrite next left
                     helper[helperSize] = array[firstLeftInt];
                     array[firstLeftInt] = array[firstRightInt];
                     firstRightInt++;
                     helperSize++;
                 }
-                //helper is less than right = we use the helper value (but save the overwriten value in the helper)
+                // when right is bigger then helper,
+                // we use the helper value (but save the overwritten value in the helper)
                 else{
                     helper[helperSize] = array[firstLeftInt];
                     array[firstLeftInt] = helper[helperIndex];
@@ -84,6 +86,7 @@ public class MergeSort {
             }
             firstLeftInt++;
         }
+
         //now we hit the end of either partition - now we have only two of them (helper and either left or right)
         //so we do traditional merge using these two
         while(firstLeftInt <= right && (helperSize - helperIndex) > 0){
