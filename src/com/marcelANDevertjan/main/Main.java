@@ -3,6 +3,7 @@ package com.marcelANDevertjan.main;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Worker;
+import com.marcelANDevertjan.main.Assignment.Scenario2.MergeSort;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,9 +19,26 @@ public class Main{
 
     public static void main(String[] args) {
 
+        /**
+         *
+         * SCENARIO ONE
+         *
+         */
+
         customers.add(new Customer("Marcel", "Hollink", 21, 'M', "Spijkenisse", "0872955@hr.nl"));
         customers.add(new Customer("EvertJan", "Heilema", 20, 'M', "Papendrecht", "0855012@hr.nl"));
+
         customers.add(new Customer("Esmee", "van", "Kuijk", 18, 'V', "Spijkenisse"));
+        customers.add(new Customer("Vincent", "Wodtke", 20, 'M', "Spijkenisse"));
+        customers.add(new Customer("Petra", "Manschot", 21, 'V', "Spijkenisse"));
+        customers.add(new Customer("Paula", "de", "Bijer", 51, 'V', "Spijkenisse"));
+        customers.add(new Customer("Ben", "Hollink", 58, 'M', "Rotterdam"));
+        customers.add(new Customer("Sander", "Mijer", 35, 'M', "Oud Beijerland" ));
+
+
+        /**
+         *
+         *
 
         Random r = new Random();
 
@@ -32,5 +50,13 @@ public class Main{
 
         Worker worker = new Worker();
         worker.run();
+
+         *
+         *
+         */
+
+        MergeSort ms = new MergeSort();
+
+        ms.sortArray(customers);
     }
 }
