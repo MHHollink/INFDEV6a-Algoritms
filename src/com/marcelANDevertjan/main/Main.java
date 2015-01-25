@@ -4,6 +4,8 @@ import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
 import com.marcelANDevertjan.main.Assignment.Scenario2.BinairyTreeSearch;
 import com.marcelANDevertjan.main.Assignment.Scenario2.InsertionSort;
+import com.marcelANDevertjan.main.Assignment.Scenario2.LinearSearch;
+import com.marcelANDevertjan.main.Assignment.Scenario2.MergeSort;
 
 import java.util.ArrayList;
 
@@ -27,8 +29,7 @@ public class Main{
         customers.add(new Customer("EvertJan", "Heilema", 20, 'M', "Papendrecht", "0855012@hr.nl"));
         customers.add(new Customer("Marcel", "Hollink", 21, 'M', "Spijkenisse", "0872955@hr.nl"));
 
-        /**
-
+        /*
         Random r = new Random();
 
         for (int i = 0; i < r.nextInt(30); i++) {
@@ -39,7 +40,6 @@ public class Main{
 
         Worker worker = new Worker();
         worker.run();
-
          */
 
 
@@ -47,19 +47,11 @@ public class Main{
          *
          * SCENARIO TWO
          *
-
-        MergeSort ms = new MergeSort();
-        ms.sortArray(customers);
-
          */
 
-         /**
-         *
-         *
+        // MergeSort ms = new MergeSort();
+        // ms.sortArray(customers);
 
-        System.out.println(LinearSearch.searchForLastname("Heilema"));
-
-         */
 
         InsertionSort.insert(new Customer("Vincent", "Wodtke", 20, 'M', "Spijkenisse"));
         InsertionSort.insert(new Customer("Esmee", "van", "Kuijk", 18, 'V', "Spijkenisse"));
@@ -67,8 +59,8 @@ public class Main{
         InsertionSort.insert(new Customer("Petra", "Manschot", 21, 'V', "Spijkenisse"));
         InsertionSort.insert(new Customer("Sander", "Mijer", 35, 'M', "Oud Beijerland" ));
 
-
-        System.out.println(BinairyTreeSearch.binarySearchLastName(customers, "Heilema"));
+        System.out.println(LinearSearch.searchForLastname(customers ,"Heilema"));
+        System.out.println(BinairyTreeSearch.binarySearchLastName(customers, "Hollink"));
 
     }
 }
