@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class MergeSort {
 
 
-    public void sortArray(ArrayList<Customer> customers) {
+    public static void sortArray(ArrayList<Customer> customers) {
 
         int[] ages = new int[customers.size()];
 
