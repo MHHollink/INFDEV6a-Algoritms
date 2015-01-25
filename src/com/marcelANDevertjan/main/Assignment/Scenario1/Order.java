@@ -12,6 +12,7 @@ import static java.lang.System.currentTimeMillis;
  */
 public class Order {
 
+    private static int OrderCount = 0;
     private String customerId;
     private int orderId;
     private boolean processing = false;
@@ -32,7 +33,8 @@ public class Order {
         this.duration = duration;
         this.immediately = immediately;
 
-        orderId = Main.orders.size();
+        orderId = OrderCount;
+        OrderCount++;
 
         Main.orders.add(this);
         if (immediately){
@@ -49,7 +51,8 @@ public class Order {
         this.customerId = customerId;
         this.duration = duration;
 
-        orderId = Main.orders.size();
+        orderId = OrderCount;
+        OrderCount++;
 
         Main.orders.add(this);
         System.out.println("Job Created : "+customerId);

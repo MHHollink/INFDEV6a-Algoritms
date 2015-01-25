@@ -2,6 +2,8 @@ package com.marcelANDevertjan.main.Assignment.Scenario1;
 
 import com.marcelANDevertjan.main.Main;
 
+import java.util.Random;
+
 import static java.lang.System.currentTimeMillis;
 
 /**
@@ -18,6 +20,9 @@ public class Worker implements Runnable{
     // Order object to place the current order while being processed.
     private Order currentJob;
 
+    // Random to add new jobs on the fly
+    private Random r = new Random();
+
     @Override
     public void run() {
 
@@ -31,6 +36,10 @@ public class Worker implements Runnable{
                     currentJob.hasBeenCompleted(true);
 
                     working = false;
+
+                    if(r.nextBoolean()){
+                        Main.customers.get(r.nextInt(Main.customers.size())).placeOrder(r.nextInt(4500)+500, r.nextBoolean());
+                    }
                 }
 
             // If not, search for an unprocessed order.
@@ -99,9 +108,10 @@ public class Worker implements Runnable{
             }
 
 
+
             // This wil keep the process running at lower speed to keep from memory overflowing.
             try {
-                Thread.sleep(1);
+                Thread.sleep(5);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
