@@ -14,8 +14,8 @@ import static java.lang.System.currentTimeMillis;
 public class MainByEJ {
     public static Queue<Order> orders;
     static ArrayList<Customer> customers;
-    static ArrayList<Order> normalOrders;
-    static ArrayList<Order> immediateOrders;
+    static Queue<Order> normalOrders;
+    static Queue<Order> immediateOrders;
 
     static Thread normalWorker;
     static Thread immediateWorker;
@@ -23,8 +23,8 @@ public class MainByEJ {
     public static void main(String[] args) {
         orders = new LinkedList<Order>();
         customers = new ArrayList<Customer>();
-        normalOrders = new ArrayList<Order>();
-        immediateOrders = new ArrayList<Order>();
+        normalOrders = new LinkedList<Order>();
+        immediateOrders = new LinkedList<Order>();
 
         customers.add(new Customer("Marcel", "Hollink", 21, 'M', "Spijkenisse", "0872955@hr.nl"));
         customers.add(new Customer("EvertJan", "Heilema", 20, 'M', "Papendrecht", "0855012@hr.nl"));
@@ -87,7 +87,7 @@ public class MainByEJ {
 
                     // This wil keep the process running at lower speed to keep from memory overflowing.
                     try {
-                        Thread.sleep(5);
+                        Thread.sleep(1);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -149,7 +149,7 @@ public class MainByEJ {
 
                     // This wil keep the process running at lower speed to keep from memory overflowing.
                     try {
-                        Thread.sleep(5);
+                        Thread.sleep(1);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
