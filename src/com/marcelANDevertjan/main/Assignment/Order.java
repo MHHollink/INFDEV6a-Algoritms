@@ -13,7 +13,7 @@ import static java.lang.System.currentTimeMillis;
 public class Order {
 
     private String customerId;
-    private UUID orderId;
+    private int orderId;
     private boolean processing = false;
     private boolean completed = false;
     private boolean immediately = false;
@@ -32,13 +32,13 @@ public class Order {
         this.duration = duration;
         this.immediately = immediately;
 
-        orderId = UUID.randomUUID();
+        orderId = Main.orders.size();
 
         Main.orders.add(this);
         if (immediately){
-            System.out.println("Job Created : " + customerId +", and was specified as immediately");
+            System.out.println("Job Created : " + orderId +", and was specified as immediately");
         }else {
-            System.out.println("Job Created : " + customerId);
+            System.out.println("Job Created : " + orderId);
         }
     }
 
@@ -49,7 +49,7 @@ public class Order {
         this.customerId = customerId;
         this.duration = duration;
 
-        orderId = UUID.randomUUID();
+        orderId = Main.orders.size();
 
         Main.orders.add(this);
         System.out.println("Job Created : "+customerId);
@@ -84,7 +84,7 @@ public class Order {
     public boolean isCompleted() {
         return completed;
     }
-    public UUID getOrderId() {
+    public int getOrderId() {
         return orderId;
     }
 
@@ -94,7 +94,7 @@ public class Order {
      * @param completed is true if the order has been completed.
      */
     public void hasBeenCompleted(Boolean completed) {
-        System.out.println("The job placed by _"+customerId+"_ has been Completed");
+        System.out.println("job _"+orderId+"_ has been Completed over an duration of "+duration);
         this.completed = completed;
     }
 

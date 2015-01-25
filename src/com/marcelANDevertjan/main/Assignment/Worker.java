@@ -84,7 +84,9 @@ public class Worker implements Runnable{
                 // if it has been completed in the previous steps.
                 if(order.isCompleted()) {
                     // Remove the order from the list of orders.
+                    System.out.println("order "+order.getOrderId()+" was removed from the queue");
                     Main.orders.remove(order);
+
                     break;
                 }
             }

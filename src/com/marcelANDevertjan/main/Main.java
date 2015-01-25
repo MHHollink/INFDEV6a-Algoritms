@@ -28,7 +28,7 @@ public class Main{
             customers.get(r.nextInt(customers.size())).placeOrder(r.nextInt(4500)+500, r.nextBoolean());
         }
 
-        System.out.println(orders.size());
+        System.out.println("\n"+orders.size()+" jobs were created \n");
 
         Worker worker = new Worker();
         worker.run();
