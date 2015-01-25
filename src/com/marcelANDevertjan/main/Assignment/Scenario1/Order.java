@@ -1,6 +1,7 @@
 package com.marcelANDevertjan.main.Assignment.Scenario1;
 
 import com.marcelANDevertjan.main.Main;
+import com.marcelANDevertjan.main.MainByEJ;
 
 import java.util.UUID;
 
@@ -36,7 +37,7 @@ public class Order {
         orderId = OrderCount;
         OrderCount++;
 
-        Main.orders.add(this);
+        MainByEJ.orders.add(this);
         if (immediately){
             System.out.println("Job Created : " + orderId +", and was specified as immediately");
         }else {
