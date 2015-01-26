@@ -164,12 +164,12 @@ public class MainByEJ {
         while (true) {
             for (Order order : orders) {
                 if (order.isImmediately()) {
-                    immediateOrders.add(order);
-                    orders.remove(order);
+                    immediateOrders.enqueue(order);
+                    orders.dequeue(order);
                     break;
                 } else {
-                    normalOrders.add(order);
-                    orders.remove(order);
+                    normalOrders.enqueue(order);
+                    orders.dequeue(order);
                     break;
                 }
             }
