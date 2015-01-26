@@ -1,5 +1,6 @@
 package com.marcelANDevertjan.main;
 
+import com.marcelANDevertjan.main.Assignment.Scenario1.CustomQueue;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Worker;
@@ -12,19 +13,19 @@ import static java.lang.System.currentTimeMillis;
  * Created by Evert-Jan on 25-1-2015.
  */
 public class MainByEJ {
-    public static Queue<Order> orders;
+    public static CustomQueue<Order> orders;
     static ArrayList<Customer> customers;
-    static Queue<Order> normalOrders;
-    static Queue<Order> immediateOrders;
+    static CustomQueue<Order> normalOrders;
+    static CustomQueue<Order> immediateOrders;
 
     static Thread normalWorker;
     static Thread immediateWorker;
 
     public static void main(String[] args) {
-        orders = new LinkedList<Order>();
+        orders = new CustomQueue<Order>();
         customers = new ArrayList<Customer>();
-        normalOrders = new LinkedList<Order>();
-        immediateOrders = new LinkedList<Order>();
+        normalOrders = new CustomQueue<Order>();
+        immediateOrders = new CustomQueue<Order>();
 
         customers.add(new Customer("Marcel", "Hollink", 21, 'M', "Spijkenisse", "0872955@hr.nl"));
         customers.add(new Customer("EvertJan", "Heilema", 20, 'M', "Papendrecht", "0855012@hr.nl"));
