@@ -60,15 +60,10 @@ public class Main{
         InsertionSort.insert(new Customer("Henk", "Hollink", 53, 'V', "Spijkenisse"));
         InsertionSort.insert(new Customer("Sander", "Mijer", 35, 'M', "Oud Beijerland"));
 
-        MergeSort.sortArray(customers);
+    //    MergeSort.sortArray(customers);
 
-        System.out.println(LinearSearch.searchForLastname(customers ,"Heilema"));
-        System.out.println(BinairyTreeSearch.binarySearchLastName(customers, "Hollink"));
-
-
-        for (Customer customer : customers) {
-            System.out.println(customer.getId());
-        }
+    //    System.out.println(LinearSearch.searchForLastname(customers ,"Heilema"));
+    //    System.out.println(BinairyTreeSearch.binarySearchLastName(customers, "Hollink"));
 
 
         BinaryTree bt = new BinaryTree();
@@ -78,11 +73,8 @@ public class Main{
             bt.addNode(customer.getId().toCharArray(), customer.getLastName());
         }
 
-        bt.inOrderTraverse(bt.getRoot());
 
-        bt.remove(customers.get(2).getId().toCharArray());
-
-        System.out.println("----");
+        System.out.println(bt.remove(customers.get(5).getId().toCharArray()));
         bt.inOrderTraverse(bt.getRoot());
 
     }

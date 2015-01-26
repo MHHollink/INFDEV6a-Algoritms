@@ -84,10 +84,13 @@ public class BinaryTree {
                 isItALeftChild = true;
 
                 focusNode = focusNode.left;
+            } else if(keyName[0] == focusNode.keyName[0]) {
+                System.out.println("here");
             } else {
                 isItALeftChild = false;
 
                 focusNode = focusNode.right;
+
             }
 
             if (focusNode == null)
@@ -104,14 +107,23 @@ public class BinaryTree {
             } else {
                 parent.right = null;
             }
+
+
         } else if (focusNode.right == null) {
-            if(focusNode == root){
+            if (focusNode == root) {
                 root = null;
-            } else if (isItALeftChild) {
+            } else {
                 parent.left = focusNode.left;
+            }
+
+        }else if (focusNode.left == null){
+
+            if (focusNode == root){
+                root = focusNode.right;
             } else {
                 parent.right = focusNode.right;
             }
+
         } else {
             Node replacement = getReplacementNode(focusNode);
 
