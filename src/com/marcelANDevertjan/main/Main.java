@@ -52,29 +52,34 @@ public class Main{
          */
 
 
-
-
         InsertionSort.insert(new Customer("Vincent", "Wodtke", 20, 'M', "Spijkenisse"));
         InsertionSort.insert(new Customer("Esmee", "van", "Kuijk", 18, 'V', "Spijkenisse"));
         InsertionSort.insert(new Customer("Ben", "Hollink", 55, 'M', "Rotterdam"));
         InsertionSort.insert(new Customer("Henk", "Hollink", 53, 'V', "Spijkenisse"));
         InsertionSort.insert(new Customer("Sander", "Mijer", 35, 'M', "Oud Beijerland"));
 
-    //    MergeSort.sortArray(customers);
+        //    MergeSort.sortArray(customers);
 
-    //    System.out.println(LinearSearch.searchForLastname(customers ,"Heilema"));
-    //    System.out.println(BinairyTreeSearch.binarySearchLastName(customers, "Hollink"));
+        //    System.out.println(LinearSearch.searchForLastname(customers ,"Heilema"));
+        //    System.out.println(BinairyTreeSearch.binarySearchLastName(customers, "Hollink"));
 
+
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
         BinaryTree bt = new BinaryTree();
-
 
         for (Customer customer : customers) {
             bt.addNode(customer.getId().toCharArray(), customer.getLastName());
         }
 
+        System.out.println("before removal");
+        bt.inOrderTraverse(bt.getRoot());
 
-        System.out.println(bt.remove(customers.get(5).getId().toCharArray()));
+        System.out.println("\n");
+
+        bt.remove(("esmku18vs").toCharArray());
+
+        System.out.println("after removal");
         bt.inOrderTraverse(bt.getRoot());
 
     }

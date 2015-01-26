@@ -79,18 +79,30 @@ public class BinaryTree {
 
             parent = focusNode;
 
-            if (keyName[0] < focusNode.keyName[0]) {
+            if(keyName[0] == focusNode.keyName[0]) {
+                for (int i = 0; i < keyName.length; i++) {
+                    if(keyName[i] < focusNode.keyName[i]) {
+                        isItALeftChild = true;
+
+                        focusNode = focusNode.left;
+
+                        break;
+                    } else if(keyName[i] > focusNode.keyName[i]){
+                        isItALeftChild = false;
+
+                        focusNode = focusNode.right;
+                        break;
+                    }
+                }
+            } else if (keyName[0] < focusNode.keyName[0]) {
 
                 isItALeftChild = true;
 
                 focusNode = focusNode.left;
-            } else if(keyName[0] == focusNode.keyName[0]) {
-                System.out.println("here");
-            } else {
+            } else if(keyName[0] > focusNode.keyName[0]){
                 isItALeftChild = false;
 
                 focusNode = focusNode.right;
-
             }
 
             if (focusNode == null)
@@ -182,6 +194,12 @@ class Node {
     }
 
     public String toString() {
-        return name + " has key " + Arrays.toString(keyName);
+        String s = name + " has key '";
+
+        for (char Key : keyName) {
+            s += Key;
+        }
+
+        return s + "'";
     }
 }
