@@ -3,6 +3,7 @@ package com.marcelANDevertjan.main.Assignment.Scenario1;
 /**
  * This Class was created by Evert-Jan and Marcel on 23-1-2015
  * Time of creation : 21:46
+ *
  */
 public class Customer {
 

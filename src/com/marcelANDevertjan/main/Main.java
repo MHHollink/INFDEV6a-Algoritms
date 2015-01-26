@@ -57,7 +57,7 @@ public class Main{
         InsertionSort.insert(new Customer("Vincent", "Wodtke", 20, 'M', "Spijkenisse"));
         InsertionSort.insert(new Customer("Esmee", "van", "Kuijk", 18, 'V', "Spijkenisse"));
         InsertionSort.insert(new Customer("Ben", "Hollink", 55, 'M', "Rotterdam"));
-        InsertionSort.insert(new Customer("Petra", "Manschot", 21, 'V', "Spijkenisse"));
+        InsertionSort.insert(new Customer("Henk", "Hollink", 53, 'V', "Spijkenisse"));
         InsertionSort.insert(new Customer("Sander", "Mijer", 35, 'M', "Oud Beijerland"));
 
         MergeSort.sortArray(customers);
@@ -70,6 +70,20 @@ public class Main{
             System.out.println(customer.getId());
         }
 
+
+        BinaryTree bt = new BinaryTree();
+
+
+        for (Customer customer : customers) {
+            bt.addNode(customer.getId().toCharArray(), customer.getLastName());
+        }
+
+        bt.inOrderTraverse(bt.getRoot());
+
+        bt.remove(customers.get(2).getId().toCharArray());
+
+        System.out.println("----");
+        bt.inOrderTraverse(bt.getRoot());
 
     }
 }
