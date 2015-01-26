@@ -77,10 +77,11 @@ public class Main{
 
         System.out.println("\n");
 
-        bt.remove(("esmku18vs").toCharArray());
+        bt.remove(("sanmi35mo").toCharArray());
 
         System.out.println("after removal");
         bt.inOrderTraverse(bt.getRoot());
-
+        System.out.println("\n----- find:");
+        System.out.println(bt.find(("vinwo20ms").toCharArray()));
     }
 }

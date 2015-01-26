@@ -173,6 +173,29 @@ public class BinaryTree {
         return replacement;
     }
 
+    public Node find(char[] keyName){
+
+        Node focusNode = root;
+
+        while (focusNode.keyName[0] != keyName[0]){
+
+            if( keyName[0] < focusNode.keyName[0]){
+                focusNode = focusNode.left;
+
+            }
+            else {
+                focusNode = focusNode.right;
+            }
+
+            if(focusNode == null){
+                return null;
+            }
+
+        }
+
+        return focusNode;
+    }
+
     public Node getRoot() {
         return root;
     }
