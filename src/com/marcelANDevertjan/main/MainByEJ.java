@@ -22,6 +22,10 @@ public class MainByEJ {
     static Thread immediateWorker;
 
     public static void main(String[] args) {
+
+        System.out.println("WRONG MAIN");
+        System.exit(0);
+
         orders = new CustomQueue<Order>();
         customers = new ArrayList<Customer>();
         normalOrders = new CustomQueue<Order>();

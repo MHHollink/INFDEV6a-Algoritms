@@ -2,11 +2,7 @@ package com.marcelANDevertjan.main;
 
 import com.marcelANDevertjan.main.Assignment.Scenario1.Customer;
 import com.marcelANDevertjan.main.Assignment.Scenario1.Order;
-import com.marcelANDevertjan.main.Assignment.Scenario2.BinairyTreeSearch;
 import com.marcelANDevertjan.main.Assignment.Scenario2.InsertionSort;
-import com.marcelANDevertjan.main.Assignment.Scenario2.LinearSearch;
-import com.marcelANDevertjan.main.Assignment.Scenario2.MergeSort;
-import com.marcelANDevertjan.main.Assignment.Scenario3.BinaryTree;
 
 import java.util.ArrayList;
 
@@ -21,6 +17,9 @@ public class Main{
     public static ArrayList<Customer> customers = new ArrayList<Customer>();
 
     public static void main(String[] args) {
+
+        System.out.println("WRONG MAIN");
+        System.exit(0);
 
         /**
          *
@@ -66,22 +65,6 @@ public class Main{
 
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-        BinaryTree bt = new BinaryTree();
 
-        for (Customer customer : customers) {
-            bt.addNode(customer.getId().toCharArray(), customer.getLastName());
-        }
-
-        System.out.println("before removal");
-        bt.inOrderTraverse(bt.getRoot());
-
-        System.out.println("\n");
-
-        bt.remove(("sanmi35mo").toCharArray());
-
-        System.out.println("after removal");
-        bt.inOrderTraverse(bt.getRoot());
-        System.out.println("\n----- find:");
-        System.out.println(bt.find(("vinwo20ms").toCharArray()));
     }
 }
