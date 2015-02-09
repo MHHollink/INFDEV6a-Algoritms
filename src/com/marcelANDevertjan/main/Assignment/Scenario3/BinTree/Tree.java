@@ -164,6 +164,83 @@ public class Tree {
          *
          */
 
+        Node hover = root;
+        Node parent = root;
+
+        /**
+         * Finding the node.
+         */
+        while(!hover.getID().equals(id)) {
+
+            parent = hover;
+
+            /**
+             * If the ID of the hover is bigger then the one that is checked.
+             * It means the node to be deleted is on the left side of the current node
+             *
+             */
+            if(hover.getID().compareToIgnoreCase(id) < 0) {
+                hover = hover.getLeft();
+            }
+
+            /**
+             * Else, the node is on the right side, so move to the right
+             */
+            else {
+                hover = hover.getRight();
+            }
+
+            /**
+             * if the current node is null
+             * the node did not exist
+             * so it can not be deleted
+             */
+            if(hover == null) {
+                System.out.println(id+" was not found, check if id was right.");
+                return false;
+            }
+        }
+
+        /**
+         * If both children of the node-to-remove are null,
+         * remove the node with no further ado
+         */
+        if(hover.getLeft() == null && hover.getRight() == null){
+
+            if(hover.equals(root)){
+                root = null;
+            } else {
+                if(parent.getLeft().getID().equals(id)){
+                    parent.setLeft(null);
+                    return true;
+                } else {
+                    parent.setRight(null);
+                    return true;
+                }
+            }
+        }
+
+        /**
+         * if RIGHT is NULL
+         * and LEFT isnot NULL
+         *
+         *
+         */
+        else if (hover.getRight() == null && hover.getLeft() != null) {
+
+
+        }
+
+        /**
+         * if RIGHT isnot NULL
+         * and LEFT is NULL
+         *
+         *
+         */
+        else if (hover.getRight() != null && hover.getLeft() == null) {
+
+
+        }
 
 
 
