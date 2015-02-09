@@ -222,28 +222,82 @@ public class Tree {
 
         /**
          * if RIGHT is NULL
-         * and LEFT isnot NULL
+         * and LEFT is not NULL
          *
          *
          */
         else if (hover.getRight() == null && hover.getLeft() != null) {
 
+            /**
+             * If hover == root, make the left node of root the new root.
+             */
+            if(hover == root){
+                root = root.getLeft();
+                return true;
+            }
 
+            /**
+             * If the parents left node is the node to delete,
+             * move the left node of the hover to the left side of the parent
+             */
+            if(parent.getLeft() == hover){
+                parent.setLeft(hover.getLeft());
+                return true;
+            }
+
+            /**
+             * Else move the left node of the hover to the right side of the parent node
+             */
+            else {
+                parent.setRight(hover.getLeft());
+                return true;
+            }
         }
 
         /**
-         * if RIGHT isnot NULL
+         * if RIGHT is not NULL
          * and LEFT is NULL
          *
          *
          */
         else if (hover.getRight() != null && hover.getLeft() == null) {
 
+            /**
+             * If hover == root, make the right node of root the new root.
+             */
+            if(hover == root){
+                root = root.getRight();
+                return true;
+            }
+
+            /**
+             * If the parents left node is the node to delete,
+             * move the right node of the hover to the left side of the parent
+             */
+            if(parent.getLeft() == hover){
+                parent.setLeft(hover.getRight());
+                return true;
+            }
+
+            /**
+             * Else move the right node of the hover to the right side of the parent node
+             */
+            else {
+                parent.setRight(hover.getRight());
+                return true;
+            }
 
         }
 
+        /**
+         * if RIGHT is not NULL
+         * and LEFT is not NULL
+         *
+         */
+        else {
 
-
+            return false;
+        }
 
         return false;
     }
