@@ -19,8 +19,15 @@ public class Main {
 
         Tree tree = new Tree();
         tree.addNodes(customers);
+        System.out.println("root node is : "+tree.getRoot().getCustomer());
 
-        tree.find(customers.get(1).getID());
+        tree.find(customers.get(0).getID());
+        tree.inOrderTraverse(tree.getRoot());
+
+        tree.removeNode(customers.get(0).getID());
+        tree.find(customers.get(0).getID());
+        tree.inOrderTraverse(tree.getRoot());
+
     }
 
     private static ArrayList<Customer> CreateCustomers() {

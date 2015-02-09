@@ -169,13 +169,12 @@ public class Tree {
         while(!hover.getID().equals(id)) {
 
             parent = hover;
-
             /**
              * If the ID of the hover is bigger then the one that is checked.
              * It means the node to be deleted is on the left side of the current node
              *
              */
-            if(hover.getID().compareToIgnoreCase(id) < 0) {
+            if(id.compareToIgnoreCase(hover.getID()) < 0) {
                 hover = hover.getLeft();
             }
 
@@ -197,19 +196,29 @@ public class Tree {
             }
         }
 
+
+
         /**
          * If both children of the node-to-remove are null,
          * remove the node with no further ado
          */
         if(hover.getLeft() == null && hover.getRight() == null){
 
+            /**
+             * If hover == root, make it null.
+             */
             if(hover.equals(root)){
                 root = null;
+                return true;
             } else {
+                /**
+                 * If check if it is left or right of his parrent, and make it null.
+                 */
                 if(parent.getLeft().getID().equals(id)){
                     parent.setLeft(null);
                     return true;
-                } else {
+                }
+                else {
                     parent.setRight(null);
                     return true;
                 }
@@ -229,7 +238,7 @@ public class Tree {
              */
             if(hover == root){
                 root = root.getLeft();
-                return true;
+
             }
 
             /**
@@ -292,10 +301,66 @@ public class Tree {
          */
         else {
 
-            return false;
-        }
+            /**
+             * get the lowest value of the right subtree,
+             *
+             * go into right subtree, get the left of the left until the left has no left anymore.
+             */
 
-        return false;
+
+            /**
+             * if the right child of the node that is going to be deleted has no left child. pla
+             */
+            if(hover.getRight().getLeft() == null) {
+                if(id.equals(root.getID())){
+                    root = hover.getRight();
+                    root.setLeft(hover.getLeft());
+                    return true;
+                }
+
+                if(parent.getLeft().getID().equals(id)){
+                    parent.setLeft(hover.getRight());
+                    hover.getRight().setLeft(hover.getLeft());
+                }
+                else {
+                    parent.setRight(hover.getRight());
+                    hover.getLeft().setLeft(hover.getLeft());
+                }
+                return true;
+            }
+
+            else {
+
+                Node replacementParent = hover.getRight();
+                Node replacement = hover.getRight().getLeft();
+
+                while (true) {
+
+                    if(replacement.getLeft() == null) {
+                        /**
+                         * if the replacement node had any right nodes,
+                         * stick them to the replacements parent
+                         */
+                        replacementParent.setLeft(replacement.getRight());
+
+
+                        if(parent.getLeft().getID().equals(id)){
+                            parent.setLeft(replacement);
+                            replacement.setLeft(hover.getLeft());
+                            return true;
+                        } else {
+                            parent.setRight(replacement);
+                            replacement.setLeft(hover.getLeft());
+                            return true;
+                        }
+
+                    } else {
+                        replacementParent = replacement;
+                        replacement = replacement.getLeft();
+                    }
+                }
+            }
+        }
     }
 
     public Node find(String id){
@@ -317,7 +382,7 @@ public class Tree {
             }
         }
 
-        System.out.println("Node found, user is : "+hover+"\n----------------\n");
+        System.out.println("Node found, user is : "+hover+"\n----------------");
         return hover;
     }
 
