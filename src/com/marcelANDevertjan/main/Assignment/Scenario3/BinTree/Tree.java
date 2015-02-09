@@ -10,6 +10,7 @@ import java.util.ArrayList;
  *
  * todo: removal of nodes!
  */
+@SuppressWarnings("UnusedDeclaration")
 public class Tree {
 
     private Node root;
@@ -148,20 +149,15 @@ public class Tree {
     /**
      * Removes a specific node from the tree by its ID
      *
-     * @param id
-     * @return
+     * @param id this is the ID of the node which will be deleted from the tree.
+     * @return boolean, false if node did not exists or could not be deleted.
+     *                  true if node has been deleted successfully
      */
     public boolean removeNode(String id){
 
         /**
          * TODO LIST :
-         *
-         * > FIND THE NODE
-         * > CHECK IF IT HAS CHILDREN
-         *      > DELETE WITH NO OTHER ACTIONS IF IT HAS NOT
-         *      > IF IT HAS ONLY ONE CHILD MOVE THE CHILD TO NODE-TO-REMOVE AND REMOVE THE NODE
          *      > IF IT HAS TWO CHILDREN START MOVING OTHER NODES TO MAKE REMOVAL POSSIBLE
-         *
          */
 
         Node hover = root;
