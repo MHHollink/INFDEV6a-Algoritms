@@ -10,6 +10,7 @@ import java.util.ArrayList;
  * This Class was created by marcel on 9-2-2015
  * Time of creation : 16:25
  */
+@SuppressWarnings("UnusedDeclaration")
 public class Main {
 
     public static ArrayList<Customer> customers = new ArrayList<Customer>();
@@ -21,11 +22,11 @@ public class Main {
         tree.addNodes(customers);
         System.out.println("root node is : "+tree.getRoot().getCustomer());
 
-        tree.find(customers.get(0).getID());
+        tree.findNode(customers.get(0).getID());
         tree.inOrderTraverse(tree.getRoot());
 
         tree.removeNode(customers.get(0).getID());
-        tree.find(customers.get(0).getID());
+        tree.findNode(customers.get(0).getID());
         tree.inOrderTraverse(tree.getRoot());
 
     }

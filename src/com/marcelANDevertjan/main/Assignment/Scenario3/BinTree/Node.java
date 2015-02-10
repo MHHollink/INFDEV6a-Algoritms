@@ -7,14 +7,14 @@ import com.marcelANDevertjan.main.Assignment.Scenario3.Data.Customer;
  * This Class was created by marcel on 9-2-2015
  * Time of creation : 16:26
  */
-@SuppressWarnings("unused")
+@SuppressWarnings("UnusedDeclaration")
 public class Node {
 
-    private Node left, right;
-    private Customer customer;
-    private String identifier;
+    protected Node left, right;
+    protected Customer customer;
+    protected String identifier;
 
-    public Node(Customer customer) {
+    protected Node(Customer customer) {
         this.customer = customer;
         identifier = customer.getID();
     }
@@ -35,11 +35,11 @@ public class Node {
         return identifier;
     }
 
-    public void setLeft(Node left) {
+    protected void setLeft(Node left) {
         this.left = left;
     }
 
-    public void setRight(Node right) {
+    protected void setRight(Node right) {
         this.right = right;
     }
 

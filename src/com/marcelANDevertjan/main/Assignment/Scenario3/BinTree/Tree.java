@@ -363,7 +363,7 @@ public class Tree {
         }
     }
 
-    public Node find(String id){
+    public Node findNode(String id){
         Node hover = root;
 
         System.out.println("---------------- \nSearch Started;");
